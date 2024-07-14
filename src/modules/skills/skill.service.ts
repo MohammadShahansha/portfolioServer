@@ -18,9 +18,14 @@ const updateSkill = async (_id: string, skillsData: TSkill) => {
   });
   return result;
 };
+const deleteSkill = async (_id: string) => {
+  const result = await Skill.deleteOne({ _id });
+  return result;
+};
 
 export const skillServices = {
   createSkillIntoDB,
   getAllSkill,
   updateSkill,
+  deleteSkill,
 };

@@ -2,7 +2,14 @@ import { TBlog } from './blog.interface';
 import { Blog } from './blog.model';
 
 const createBlogIntoDB = async (blog: TBlog) => {
-  const result = await Blog.create(blog);
+  const newdate = new Date();
+
+  const day = newdate.getDate();
+  const month = newdate.getMonth() + 1;
+  const year = newdate.getFullYear();
+  const date = `${month}/${day}/${year}`.slice(0, 10);
+  console.log(date);
+  const result = await Blog.create({ ...blog, date });
   return result;
 };
 

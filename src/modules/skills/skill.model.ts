@@ -7,7 +7,7 @@ const skillsSchema = new Schema<TSkill>({
     required: true,
   },
   percentage: {
-    type: String,
+    type: Number,
     required: true,
   },
 });
